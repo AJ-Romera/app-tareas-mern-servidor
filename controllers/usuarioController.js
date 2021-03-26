@@ -1,3 +1,3 @@
 exports.crearUsuario = (req, res) => {
-    /* console.log('desde crearUsuario'); PROBAR ESTO!!!!*/
+    console.log(req.body);
 };
