@@ -1,6 +1,7 @@
 const Proyecto = require('../models/Proyecto');
 const { validationResult } = require('express-validator');
 
+// Crea un nuevo proyecto
 exports.crearProyecto = async (req, res) => {
     // Revisar si hay errores
     const errores = validationResult(req);
