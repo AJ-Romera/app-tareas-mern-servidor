@@ -12,6 +12,6 @@ router.post(
     [check('nombre', 'El nombre del proyecto es obligatorio').not().isEmpty()],
     proyectoController.crearProyecto
 );
-router.get('/', auth, proyectoController.crearProyecto);
+router.get('/', auth, proyectoController.obtenerProyectos);
 
 module.exports = router;
