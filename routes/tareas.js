@@ -21,4 +21,7 @@ router.post(
 // Obtener las tareas de un proyecto
 router.get('/', auth, tareaController.obtenerTareas);
 
+// Actualizar/Editar una tarea
+router.put('/:id', auth, tareaController.actualizarTarea);
+
 module.exports = router;
