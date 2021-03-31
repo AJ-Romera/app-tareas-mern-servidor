@@ -18,20 +18,7 @@ router.post(
     tareaController.crearTarea
 );
 
-/* // Obtener todos los proyectos del usuario
-router.get('/', auth, proyectoController.obtenerProyectos);
-
-// Actualizar proyecto via ID
-router.put(
-    '/:id',
-    auth,
-    [check('nombre', 'El nombre del proyecto es obligatorio').not().isEmpty()],
-    proyectoController.actualizarProyecto
-);
-
-// Eliminar un proyecto via ID
-router.delete('/:id', auth, proyectoController.eliminarProyecto);
-
-*/
+// Obtener las tareas de un proyecto
+router.get('/', auth, tareaController.obtenerTareas);
 
 module.exports = router;
