@@ -2,6 +2,7 @@ const Usuario = require('../models/Usuario');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
+const { json } = require('express');
 
 exports.autenticarUsuario = async (req, res) => {
     // Revisar si hay errores
@@ -50,5 +51,16 @@ exports.autenticarUsuario = async (req, res) => {
         );
     } catch (error) {
         console.log(error);
+    }
+};
+
+// Obtiene qué usuario está autenticado
+exports.usuarioAutenticado = async (req, res) => {
+    try {
+        const usuario = await Usuario.findById(req.usuario.id);
+        res.json({ usuario });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ msg: 'Hubo un error' });
     }
 };
